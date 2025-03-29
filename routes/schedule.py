@@ -11,6 +11,7 @@ from database import storage
 
 router = APIRouter()
 
+# schedule endopint
 @router.post("/schedule")
 async def chat_endpoint():
     response_data = [
