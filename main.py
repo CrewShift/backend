@@ -7,7 +7,7 @@ from slowapi.middleware import SlowAPIMiddleware
 from fastapi.responses import JSONResponse
 
 from config import settings
-from routes import schedule
+from routes import schedule, update_schedule
 from logging_config import logger  # Your logger setup
 
 app = FastAPI()
@@ -20,6 +20,7 @@ app.add_middleware(SlowAPIMiddleware)
 
 # Include your routers.
 app.include_router(schedule.router)
+app.include_router(update_schedule.router)
 
 if __name__ == "__main__":
     import uvicorn

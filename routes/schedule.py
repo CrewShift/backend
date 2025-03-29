@@ -11,10 +11,23 @@ from database import storage
 
 router = APIRouter()
 
-# schedule endopint, test 2
+
 @router.post("/schedule")
 async def chat_endpoint():
-    response_data = [
+    # Define the statistics data
+    statistics = {
+        "flightTimeBLH": "27:55",
+        "totalFlightTimeBLH": "33:35",
+        "dutyTime": "39:45",
+        "totalDutyTime": "47:55",
+        "paidLeave": 0,
+        "unpaidLeave": 0,
+        "illness": 0,
+        "dayOff": 2
+    }
+
+    # Define the schedule data
+    schedule = [
         {
             "IndividualDay": "Mon, 01Apr",
             "Date": "2025-04-01",
@@ -264,4 +277,11 @@ async def chat_endpoint():
             ]
         }
     ]
+
+    # Combine statistics and schedule into one response
+    response_data = {
+        "statistics": statistics,
+        "schedule": schedule
+    }
+
     return JSONResponse(content=response_data)
