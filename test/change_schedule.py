@@ -44,7 +44,8 @@ def update_schedule_for_test_user():
         return
 
     # Randomly choose one flight to modify.
-    day_entry, flight_entry = random.choice(flights)
+    # day_entry, flight_entry = random.choice(flights)
+    day_entry, flight_entry = flights[0]
 
     # Decide randomly whether to modify departure, arrival, or both.
     modify_dep = random.choice([True, False])
