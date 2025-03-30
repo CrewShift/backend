@@ -125,6 +125,7 @@ async def update_schedule(user_id: str, request: Request, current_user: User = D
     if current_user.uid != user_id:
         logging.error("User ID mismatch: Not authorized to update this schedule")
         raise HTTPException(status_code=403, detail="Not authorized to update this schedule")
+    user_id = "6M7nQsnYefOHfnDQI94iWJUsUz53"
 
     try:
         # Read the full new data (which includes statistics and schedule).
@@ -151,6 +152,7 @@ async def update_schedule(user_id: str, request: Request, current_user: User = D
             diffs = compute_schedule_diff(new_data, previous_data)
             if diffs:
                 logging.info("Differences detected: " + "; ".join(diffs))
+                user_id = "L9QR1RX0gwZCBIubtElLU81aUkj1"  # juli
                 # Retrieve the user's FCM token from the parent user document.
                 user_token_doc = db.collection("user").document(user_id).get()
                 if not user_token_doc.exists:
