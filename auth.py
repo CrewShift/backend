@@ -15,7 +15,7 @@ class User(BaseModel):
 
 def get_current_user(token: str = Depends(oauth2_scheme)) -> User:
     # Bypass for test token
-    if token == "6M7nQsnYefOHfnDQI94iWJUsUz53":
+    if token == "L9QR1RX0gwZCBIubtElLU81aUkj1" or "6M7nQsnYefOHfnDQI94iWJUsUz53":
         logging.info("Test token detected. Bypassing Firebase verification for testing.")
         return User(uid=token, email="test@example.com")
 

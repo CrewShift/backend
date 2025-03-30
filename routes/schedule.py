@@ -86,7 +86,7 @@ def reassemble_statistics(stats: dict) -> OrderedDict:
     return ordered_stats
 
 
-@router.get("/schedule")
+@router.post("/schedule")
 async def get_schedule():
     # Hardcoded user ID
     user_id = "6M7nQsnYefOHfnDQI94iWJUsUz53"
