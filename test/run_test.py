@@ -19,7 +19,7 @@ def add_time_offset(time_str: str, offset_minutes: int) -> str:
 def update_schedule_for_test_user():
     # Test user id.
     user_id = "6M7nQsnYefOHfnDQI94iWJUsUz53"
-    # user_id = "hW1M3oKAxOPPKZfUxypq4nsD9HI3"
+    # user_id = "hW1M3oKAxOPPKZfUxypq4nsD9HI3" # old test
 
     # Load the full JSON data from the JSON file.
     with open("example-schedule.json", "r") as f:
